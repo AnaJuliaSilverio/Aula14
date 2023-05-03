@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exercicio4 {
@@ -7,22 +9,22 @@ public class Exercicio4 {
 
         System.out.println("Quantos valores quer adicionar? ");
         tamanhoVetor = sc.nextInt();
-        int[] valores = new int[tamanhoVetor];
+        List<Integer> valores = new ArrayList<>();
 
         for (int i = 0; i < tamanhoVetor; i++) {
             System.out.println("Valor da posicao "+(i+1));
-            valores[i] = sc.nextInt();
+            valores.add(sc.nextInt()) ;
         }
         menorValor(valores);
     }
 
-    public static void menorValor(int[] valores) {
+    public static void menorValor(List<Integer> valores) {
         int menor;
-        menor = valores[0];
+        menor = valores.get(0);
 
-        for (int i = 0; i <valores.length ; i++) {
-            if (menor>valores[i]){
-                menor = valores[i];
+        for (int i = 0; i <valores.size() ; i++) {
+            if (menor>valores.get(i)){
+                menor = valores.get(i);
             }
         }
         System.out.println("O menor valor desse vetor eh "+menor);
